@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    padding: 20px;
+}
+
+label {
+    display: inline-block;
+ }
+
+input[type="number"] {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+input[type="number"]:hover{
+    border: 2px solid #ccc;
+}
+
+input[type="number"]:active {
+    border: 1px solid #0056b3;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 0;
+}
+
+fieldset label {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+button {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+button:hover {
+    background-color: #ccc;
+}
