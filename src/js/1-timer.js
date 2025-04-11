@@ -13,6 +13,8 @@ const dataMinutes = document.querySelector('[data-minutes]');
 const dataSeconds = document.querySelector('[data-seconds]');
 
 let userSelectedDate = null;
+let timerIntervalId = null;
+
 startButton.disabled = true;
 
 const options = {
@@ -23,14 +25,11 @@ const options = {
     onClose(selectedDates) {
         const selectedDate = selectedDates[0];
       if (selectedDate <= new Date()) {
-          iziToast.error({
-              title: 'Error',
-              message: "Please choose a date in the future",
-              position: 'topRight',
-      });
+        iziToast.error({
+          title: 'Error',
+          message: "Please choose a date in the future",
+        });
           startButton.disabled = true;
-          return;
-
       } else {
           userSelectedDate = selectedDate;
           startButton.disabled = false;
@@ -62,7 +61,7 @@ function convertMs(ms) {
 
 console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
 console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+console.log(convertMs(24140000)); // {days: 0, hours: 6, minutes: 42, seconds: 20}
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
